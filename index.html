@@ -242,6 +242,117 @@
             
 
   
+    <article id="post-hexo个性化设置补充" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/07/09/hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE%E8%A1%A5%E5%85%85/">hexo个性化设置补充</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/07/09/hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE%E8%A1%A5%E5%85%85/" class="archive-article-date">
+        <time datetime="2021-07-09T10:59:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-09</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="hexo设置网站的图标"><a href="#hexo设置网站的图标" class="headerlink" title="hexo设置网站的图标"></a>hexo设置网站的图标</h3><p><strong>设置效果：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RxcidJ"><img src="https://z3.ax1x.com/2021/07/09/RxcidJ.png" alt="RxcidJ.png"></a></p>
+<p>将你想要设置的图片放到主题目录source文件内，我是在source文件夹内新建了assets文件夹存放头像和网站图标的所有图片，文件路径为<code>\Hexo\themes\yilia-plus\source\assets\img</code>，并修改主题配置文件<code>_config.yml</code>:</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RxcrYn"><img src="https://z3.ax1x.com/2021/07/09/RxcrYn.png" alt="RxcrYn.png"></a></p>
+<h3 id="添加百度统计"><a href="#添加百度统计" class="headerlink" title="添加百度统计"></a>添加百度统计</h3><p><strong>简介</strong></p>
+<p>百度统计主要用来统计分析网站的访客数据。</p>
+<p>需要注册账号，然后将代码嵌入到网站中，<code>hexo d</code>上传以后等几分钟就可以在百度统计网站上看到数据分析结果了。</p>
+<p>百度统计网址：<a target="_blank" rel="noopener" href="https://tongji.baidu.com/">https://tongji.baidu.com</a></p>
+<p><strong>说明</strong></p>
+<p>我使用的是yilia-plus主题，已经集成了百度统计，只需要在主题的配置文件中进行配置即可。不同的主题情况不同。</p>
+<p><code>D:\blog\Hexo\themes\yilia-plus\layout\_partial\baidu-analytics.ejs</code></p>
+<p><strong>配置</strong></p>
+<p><code>D:\blog\Hexo\themes\yilia-plus\_config.yml</code>原内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Miscellaneous</span><br><span class="line"># 百度统计</span><br><span class="line">baidu_analytics: &#x27;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>需要在在<code>&#39;&#39;</code>中加入在百度统计页面中生成的代码的<code>id</code>部分。</p>
+<p>百度统计生成的代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">var _hmt = _hmt || [];</span><br><span class="line">(function() &#123;</span><br><span class="line">  var hm = document.createElement(&quot;script&quot;);</span><br><span class="line">  hm.src = &quot;https://hm.baidu.com/hm.js?id&quot;;</span><br><span class="line">  var s = document.getElementsByTagName(&quot;script&quot;)[0]; </span><br><span class="line">  s.parentNode.insertBefore(hm, s);</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>代码中的<code>id</code>是一串字符串，</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RxRQwF"><img src="https://z3.ax1x.com/2021/07/09/RxRQwF.png" alt="RxRQwF.png"></a></p>
+<p>将代码复制到配置文件，<code>D:\blog\Hexo\themes\yilia-plus\layout\_partial\baidu-analytics.ejs</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.baidu_analytics)&#123; %&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var _hmt = _hmt || [];</span><br><span class="line">(function() &#123;</span><br><span class="line">	var hm = document.createElement(&quot;script&quot;);</span><br><span class="line">	hm.src = &quot;https://hm.baidu.com/hm.js?id&quot;;</span><br><span class="line">	var s = document.getElementsByTagName(&quot;script&quot;)[0]; </span><br><span class="line">	s.parentNode.insertBefore(hm, s);</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>如果复制的是我这里的代码块的话，记得将<code>id</code>部分换成自己生成的字符串。</p>
+<h3 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h3><p><a href="%5B(1%E6%9D%A1%E6%B6%88%E6%81%AF">hexo+yilia添加百度统计和Google统计</a> hexo+yilia添加百度统计和Google统计_荷塘月色-CSDN博客](<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41287260/article/details/103049971">https://blog.csdn.net/weixin_41287260/article/details/103049971</a>))</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo+github</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/07/09/hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE%E8%A1%A5%E5%85%85/">全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Hexo-Github搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -524,6 +635,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">hexo github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo+github</a>
               </li>
             
             <div class="clearfix"></div>
