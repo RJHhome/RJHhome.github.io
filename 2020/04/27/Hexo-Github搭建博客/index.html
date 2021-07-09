@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2020/05/04/Y9tThV.png?ynotemdtimestamp=1590542056216">
 <meta property="og:image" content="https://s1.ax1x.com/2020/05/04/Y9tXnJ.png?ynotemdtimestamp=1590542056216">
 <meta property="article:published_time" content="2020-04-27T01:58:31.000Z">
-<meta property="article:modified_time" content="2020-05-27T02:21:16.000Z">
+<meta property="article:modified_time" content="2021-07-09T02:45:36.512Z">
 <meta property="article:author" content="RJH">
 <meta property="article:tag" content="hexo github">
 <meta name="twitter:card" content="summary">
@@ -339,7 +339,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init Hexo</span><br></pre></td></tr></table></figure>
 
 <p>这个<code>Hexo</code>可以自己取名，然后接着输入 <code>npm install</code>安装必备的组件。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd Hexo //进入这个Hexo文件夹` `npm install</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd Hexo //进入这个Hexo文件夹</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 
 <p>新建完成后，Hexo文件夹里面有：</p>
 <ul>
@@ -351,7 +351,7 @@
 <li><code>_config.yml</code>:博客的配置文件</li>
 </ul>
 <p>然后输入<code>hexo g</code>生成静态网页，然后输入<code>hexo s</code>或者打开本地服务器，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g` `hexo server(或者简写为：hexo s)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo server(或者简写为：hexo s)</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://s1.ax1x.com/2020/05/04/Y9tstP.png?ynotemdtimestamp=1590542056216" alt="image-20200427153715419"></p>
 <p>用浏览器打开<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E6%88%91%E4%BB%AC%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%BA%86%EF%BC%8C%E6%95%88%E6%9E%9C%E5%A6%82%E4%B8%8B%EF%BC%9A">http://localhost:4000/，就可以看到我们的博客了，效果如下：</a></p>
@@ -367,7 +367,7 @@
 
 <p>这里的<code>name</code>是指你GitHub用户名，<code>mail</code>是指你的GitHub邮箱，这样GitHub才知道你是不是对应的账户。</p>
 <p>可以用两条语句验证一下你有没有输对：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config user.name` `git config user.email</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
 
 <p>然后创建ssh，一路回车</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;mail&quot;</span><br></pre></td></tr></table></figure>
@@ -390,7 +390,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
 <p>然后</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean(清除之前生成的东西)` `hexo generate(生成静态文章，也可简写为：hexo g)``hexo deploy(部署文章，也可简写为：hexo d)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean(清除之前生成的东西)</span><br><span class="line">hexo generate(生成静态文章，也可简写为：hexo g)</span><br><span class="line">hexo deploy(部署文章，也可简写为：hexo d)</span><br></pre></td></tr></table></figure>
 
 <p>得到下图就说明部署成功了，等几分钟就可以在<a href="http://name.github.io这个网址看到你的博客了：">http://name.github.io这个网址看到你的博客了：</a></p>
 <p><img src="https://s1.ax1x.com/2020/05/04/Y9t47n.png?ynotemdtimestamp=1590542056216" alt="image-20200427190941479"></p>
