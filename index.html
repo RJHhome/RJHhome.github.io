@@ -271,7 +271,41 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h3 id="站点访问人数busuanzi插件数据统计错误"><a href="#站点访问人数busuanzi插件数据统计错误" class="headerlink" title="站点访问人数busuanzi插件数据统计错误"></a>站点访问人数busuanzi插件数据统计错误</h3><p>使用<code>hexo s</code>本地服务器预览效果时发现buxuanzi统计数据过于庞大</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Rzw3VI"><img src="https://z3.ax1x.com/2021/07/10/Rzw3VI.png" alt="Rzw3VI.png"></a></p>
+<p>只需要将博客部署到静态网站即可显示正常的统计数据。</p>
+<hr>
+<h3 id="hexo错误"><a href="#hexo错误" class="headerlink" title="hexo错误"></a>hexo错误</h3><h4 id="hexo-d"><a href="#hexo-d" class="headerlink" title="hexo d"></a>hexo d</h4><p>编辑博客文章<code>md</code>以后<code>hexo d</code>报错</p>
+<p>YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 9, column 4:</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Rz0Tmj"><img src="https://z3.ax1x.com/2021/07/10/Rz0Tmj.png" alt="Rz0Tmj.png"></a></p>
+<p>解决方法：</p>
+<p>在刚刚编辑的文章的格式设置部分前要加空格</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/RzBeje"><img src="https://z3.ax1x.com/2021/07/10/RzBeje.png" alt="RzBeje.png"></a></p>
+<h4 id="hexo-g"><a href="#hexo-g" class="headerlink" title="hexo g"></a>hexo g</h4><p>部署博客时<code>spawn failed</code></p>
+<p><strong>解决方式1</strong></p>
+<p>重启电脑</p>
+<p><strong>解决方式2</strong></p>
+<p>可能是网络问题，换个网络试试</p>
+<p><strong>解决方式3</strong>（我试了一下不太行）</p>
+<p>删除博客文件夹中的<code>.deploy_git</code>文件夹，然后在终端cd这个文件夹后输入<code>git config --global core.autocrlf false</code></p>
+<p><strong>解决方式4</strong></p>
+<p>打开<code>_config.yml</code>配置文件</p>
+<p>修改以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: https://github.com/yourname/yourname.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
+<p>其中的<code>repo</code>修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo: git@github.com:yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure>
+
+<p><strong>解决方式5</strong></p>
+<p>找到<code>.deploy_git</code>文件夹中的<code>index.lock</code>文件，删除就好了。</p>
+<p><strong>解决方式6</strong></p>
+<p>cd进<code>.deploy_git</code>文件夹，然后使用<code>git push -f</code>强制推送</p>
+<p><strong>解决方式7</strong></p>
+<p>打开<code>.deploy_git\.git\logs</code>路径下的<code>HEAD</code>查看最近一次正确的那次的<code>commitId</code>然后用<code>git reset --hard commitId</code>回滚</p>
+<hr>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ZhaiKun68/article/details/109992202"> 站点访问人数 Buszanui 插件数据统计错误_KarenChia - 翟坤-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.zhheo.com/p/128998ac.html">Hexo错误：spawn failed的解决方法 | 张洪Heo (zhheo.com)</a></p>
+
     
 
     
@@ -282,6 +316,17 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo+github</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
